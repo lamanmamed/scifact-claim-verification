@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scifact-claim-verification"
+version = "0.1.0"
+description = "Scientific claim verification with hybrid retrieval, reranking, evidence extraction, and LLM verdict generation"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "torch>=2.0",
+]
+
+[project.optional-dependencies]
+models = [
+    "faiss-cpu>=1.8",
+    "sentence-transformers>=3.0",
+    "transformers>=4.48",
+    "datasets>=3.0",
+    "accelerate>=1.0",
+]
+pyserini = [
+    "pyserini>=0.25",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
